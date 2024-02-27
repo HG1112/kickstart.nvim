@@ -17,12 +17,14 @@ local servers = {
   pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
+  ruby_ls = {},
 
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
+      diagnostics = { globals = { 'vim' } }
     },
   },
 }
@@ -44,7 +46,3 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
-
-
-
-
