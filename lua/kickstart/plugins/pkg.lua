@@ -34,24 +34,6 @@ require('lazy').setup {
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- Here is a more advanced example where we pass configuration
-  -- options to `gitsigns.nvim`. This is equivalent to the following lua:
-  --    require('gitsigns').setup({ ... })
-  --
-  -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
   -- NOTE: Plugins can also be configured to run lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -74,7 +56,6 @@ require('lazy').setup {
       require('which-key').setup()
 
       require 'kickstart.keymap.which'
-
     end,
   },
 
@@ -135,12 +116,13 @@ require('lazy').setup {
     end,
   },
 
-
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for kickstart
   --
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
+  require 'kickstart.plugins.git',
+  require 'kickstart.plugins.explorer',
   require 'kickstart.plugins.cmp',
   require 'kickstart.plugins.lsp',
   require 'kickstart.plugins.search',

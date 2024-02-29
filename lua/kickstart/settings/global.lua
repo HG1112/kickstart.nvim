@@ -66,5 +66,8 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-
 vim.g.python3_host_prog = '/Users/h0g061r/miniconda3/bin/python3'
+--
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
